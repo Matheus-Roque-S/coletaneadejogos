@@ -3,6 +3,15 @@ const idsPermitidos = [352, 500, 58, 79, 88];
 const urlParams = new URLSearchParams(window.location.search);
 const jogoId = urlParams.get("id");
 
+window.addEventListener("pageshow", () => {
+    // Remove qualquer animação que tenha ficado na tela
+    document.querySelectorAll(".animacao-jogo").forEach(el => el.remove());
+
+    // Libera cliques novamente se estava desativado
+    document.body.style.pointerEvents = "auto";
+});
+
+
 fetch('./jogos.json')
     .then(res => res.json())
     .then(data => {
