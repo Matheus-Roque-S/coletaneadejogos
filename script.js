@@ -2,18 +2,9 @@ let jogos = [];
 const idsPermitidos = [352, 500, 58, 79, 88];
 const urlParams = new URLSearchParams(window.location.search);
 const jogoId = urlParams.get("id");
-const main = document.querySelector("main");
 const header = document.querySelector("header");
+const main = document.querySelector("main");
 const footer = document.querySelector("footer");
-
-window.addEventListener("pageshow", () => {
-    // Remove qualquer animação que tenha ficado na tela
-    document.querySelectorAll(".animacao-jogo").forEach(el => el.remove());
-
-    // Libera cliques novamente se estava desativado
-    document.body.style.pointerEvents = "auto";
-});
-
 
 fetch('./jogos.json')
     .then(res => res.json())
@@ -79,17 +70,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.body.appendChild(imgClone);
 
                 setTimeout(() => {
+                    imgClone.classList.add("ativo")
                     main.classList.add("esconder");
                     header.classList.add("esconder");
                     footer.classList.add("esconder");
-                    imgClone.classList.add("ativo");
                 }, 10);
-                setTimeout(() => {
-                    imgClone.classList.add("bordaseluz");
-                }, 350);
-                setTimeout(() => {
-                    imgClone.classList.add("expandir");
-                }, 1500);
+                setTimeout(() => imgClone.classList.add("bordaseluz"), 350);
+                setTimeout(() => imgClone.classList.add("expandir"), 1500);
                 setTimeout(() => {
                     main.classList.remove("esconder");
                     header.classList.remove("esconder");
@@ -97,6 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     window.location.href = item.dataset.link
                 }, 2500);
             });
+
             sugestoesDiv.appendChild(item);
         });
 
@@ -141,10 +129,10 @@ function animarTransicao(e) {
     document.body.appendChild(imgClone);
 
     setTimeout(() => {
+        imgClone.classList.add("ativo");
         main.classList.add("esconder");
         header.classList.add("esconder");
         footer.classList.add("esconder");
-        imgClone.classList.add("ativo");
     }, 10);
     setTimeout(() => {
         imgClone.classList.add("bordaseluz");
@@ -156,7 +144,7 @@ function animarTransicao(e) {
         main.classList.remove("esconder");
         header.classList.remove("esconder");
         footer.classList.remove("esconder");
-        window.location.href = item.dataset.link
+        window.location.href = link;
     }, 2500);
 }
 
