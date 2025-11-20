@@ -188,10 +188,6 @@ footer {
     width: 100%;
 }
 
-.esconder {
-    display: none; 
-}
-
 #contato{
     max-width: 500px;
     padding: 20px;
@@ -206,6 +202,10 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.esconder {
+    display: none; 
 }
 
 
