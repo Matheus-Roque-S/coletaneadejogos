@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1d1d1d;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    color: #E62E5A;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #111111;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#paginaativa{
+    text-decoration: underline;
+    color: #8EA5AF;
+    font-weight: bold;
+}
+
+
+
+#pesquisa {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+#resultado {
+    position: absolute;
+    top: 40px;
+    background-color: #333;
+    color: whitesmoke;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 400px;
+    z-index: 2;
+}
+
+#resultado section {
+    display: flex;
+    text-align: left;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    text-wrap: wrap;
+    width: 290px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#resultado img {
+    width: 75px;
+    height: 112.5px;
+}
+
+input[type="text"] {
+    color: #8EA5AF;
+    width: 300px;
+    padding: 5px;
+    border: none;
+    border-color: #E62E5A;
+    border-bottom: #E62E5A 2px solid;
+    background-color: transparent;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #E62E5A;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.7s;
+}
+
+a:hover {
+    color: #8EA5AF;
+}
+
+.resultado-item {
+    transition: 0.6s;
+}
+
+.resultado-item:hover {
+    background-color: rgb(131, 134, 133);
+}
+
+main {
+    flex: 1;
+    padding-top: 5px;
+    padding-bottom: 3px;
+
+}
+
+main h1 {
+    text-align: center;
+    font-family: "Montserrat", Tahoma, Geneva, Verdana, sans-serif;
+    animation: coresletras 5s infinite;
+}
+
+.card-jogo{
+    cursor: pointer;
+    transition: 0.6s;
+    width: 225px;
+    text-wrap: wrap;
+}
+
+.card-jogo:hover {
+    transform: scale(1.02);
+}
+
+.card-jogo img {
+    transition: 5s;
+    filter: grayscale(0.3);
+}
+
+.card-jogo:hover img {
+    filter: drop-shadow(0 0 5px #E62E5A) grayscale(0);
+}
+
+@keyframes coresletras {
+    0% {
+        color: #E62E5A;
+    }
+    50% {
+        color: #8EA5AF;
+    }
+    70% {
+        color: #E62E5A;
+    }
+}
+
+
+#jogos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+#jogos img {
+    width: 225px;
+}
+
+footer {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+.animacao-jogo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transition: width 1s ease, height 1s ease, transform 1s linear;
+    opacity: 0;
+    pointer-events: none;
+    filter: contrast(1.2) grayscale(1);
+}
+
+.ativo {
+    opacity: 1;
+    animation: girar 1s linear 1; /* 1 giro */
+    z-index: 3;
+}
+
+.bordaseluz{
+    border-radius: 10px;
+    filter: grayscale(0) drop-shadow(0 0 5px #E62E5A);
+    transition: 1s;
+}
+
+
+@keyframes girar {
+    0% { transform: translate(-50%, -50%) rotateY(0deg); }
+    100% { transform: translate(-50%, -50%) rotateY(360deg); }
+}
+
+.expandir {
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 720px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    input[type="text"] {
+        max-width: 250px;
+    }
+
+    #resultado section {
+        width: 240px;
+    }
+
+    nav {
+        order: 1;
+    }
+
+    #pesquisa {
+        justify-content: space-around;
+        order: 2;
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
