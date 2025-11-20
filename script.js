@@ -75,7 +75,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 imgClone.classList.add("animacao-jogo");
                 document.body.appendChild(imgClone);
 
-                setTimeout(() => imgClone.classList.add("ativo"), 10);
+                setTimeout(() => {
+                    const main = document.querySelector("main");
+                    main.style.display = "none";
+                    imgClone.classList.add("ativo");
+                }, 10);
                 setTimeout(() => imgClone.classList.add("bordaseluz"), 350);
                 setTimeout(() => imgClone.classList.add("expandir"), 1500);
                 setTimeout(() => window.location.href = item.dataset.link, 2500);
@@ -125,6 +129,8 @@ function animarTransicao(e) {
     document.body.appendChild(imgClone);
 
     setTimeout(() => {
+        const main = document.querySelector("main");
+        main.style.display = "none";
         imgClone.classList.add("ativo");
     }, 10);
     setTimeout(() => {
