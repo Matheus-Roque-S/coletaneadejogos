@@ -79,19 +79,24 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.body.appendChild(imgClone);
 
                 setTimeout(() => {
-                main.style.display = "none";
-                header.style.display = "none";
-                footer.style.display = "none";
-                imgClone.classList.add("ativo");
+                    main.classList.add("esconder");
+                    header.classList.add("esconder");
+                    footer.classList.add("esconder");
+                    imgClone.classList.add("ativo");
                 }, 10);
-                setTimeout(() => imgClone.classList.add("bordaseluz"), 350);
-                setTimeout(() => imgClone.classList.add("expandir"), 1500);
                 setTimeout(() => {
-                main.style.display = "block";
-                header.style.display = "block";
-                footer.style.display = "block";
-                window.location.href = item.dataset.link}, 2500);
-                });
+                    imgClone.classList.add("bordaseluz");
+                }, 350);
+                setTimeout(() => {
+                    imgClone.classList.add("expandir");
+                }, 1500);
+                setTimeout(() => {
+                    main.classList.remove("esconder");
+                    header.classList.remove("esconder");
+                    footer.classList.remove("esconder");
+                    window.location.href = item.dataset.link
+                }, 2500);
+            });
             sugestoesDiv.appendChild(item);
         });
 
@@ -136,10 +141,11 @@ function animarTransicao(e) {
     document.body.appendChild(imgClone);
 
     setTimeout(() => {
-        main.style.display = "none";
-        header.style.display = "none";
-        footer.style.display = "none";
-        imgClone.classList.add("ativo");}, 10);
+        main.classList.add("esconder");
+        header.classList.add("esconder");
+        footer.classList.add("esconder");
+        imgClone.classList.add("ativo");
+    }, 10);
     setTimeout(() => {
         imgClone.classList.add("bordaseluz");
     }, 350);
@@ -147,10 +153,11 @@ function animarTransicao(e) {
         imgClone.classList.add("expandir");
     }, 1500);
     setTimeout(() => {
-        main.style.display = "block";
-        header.style.display = "block";
-        footer.style.display = "block";
-        window.location.href = item.dataset.link}, 2500);
+        main.classList.remove("esconder");
+        header.classList.remove("esconder");
+        footer.classList.remove("esconder");
+        window.location.href = item.dataset.link
+    }, 2500);
 }
 
 if (jogoId !== null) {
