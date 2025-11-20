@@ -2,6 +2,9 @@ let jogos = [];
 const idsPermitidos = [352, 500, 58, 79, 88];
 const urlParams = new URLSearchParams(window.location.search);
 const jogoId = urlParams.get("id");
+const main = document.querySelector("main");
+const header = document.querySelector("header");
+const footer = document.querySelector("footer");
 
 window.addEventListener("pageshow", () => {
     // Remove qualquer animação que tenha ficado na tela
@@ -76,15 +79,19 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.body.appendChild(imgClone);
 
                 setTimeout(() => {
-                    const main = document.querySelector("main");
-                    main.style.display = "none";
-                    imgClone.classList.add("ativo");
+                main.style.display = "none";
+                header.style.display = "none";
+                footer.style.display = "none";
+                imgClone.classList.add("ativo");
                 }, 10);
                 setTimeout(() => imgClone.classList.add("bordaseluz"), 350);
                 setTimeout(() => imgClone.classList.add("expandir"), 1500);
-                setTimeout(() => window.location.href = item.dataset.link, 2500);
-            });
-
+                setTimeout(() => {
+                main.style.display = "block";
+                header.style.display = "block";
+                footer.style.display = "block";
+                window.location.href = item.dataset.link}, 2500);
+                });
             sugestoesDiv.appendChild(item);
         });
 
@@ -129,10 +136,10 @@ function animarTransicao(e) {
     document.body.appendChild(imgClone);
 
     setTimeout(() => {
-        const main = document.querySelector("main");
         main.style.display = "none";
-        imgClone.classList.add("ativo");
-    }, 10);
+        header.style.display = "none";
+        footer.style.display = "none";
+        imgClone.classList.add("ativo");}, 10);
     setTimeout(() => {
         imgClone.classList.add("bordaseluz");
     }, 350);
@@ -140,8 +147,10 @@ function animarTransicao(e) {
         imgClone.classList.add("expandir");
     }, 1500);
     setTimeout(() => {
-        window.location.href = link;
-    }, 2500);
+        main.style.display = "block";
+        header.style.display = "block";
+        footer.style.display = "block";
+        window.location.href = item.dataset.link}, 2500);
 }
 
 if (jogoId !== null) {
