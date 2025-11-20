@@ -215,6 +215,10 @@ footer {
     width: 100%;
 }
 
+.esconder{
+    display: none;
+}
+
 
 
 @media screen and (max-width: 720px) {
@@ -246,5 +250,6 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
+
 
 }
