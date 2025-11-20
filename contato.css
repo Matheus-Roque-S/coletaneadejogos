@@ -188,6 +188,10 @@ footer {
     width: 100%;
 }
 
+.esconder {
+    display: none; 
+}
+
 #contato{
     max-width: 500px;
     padding: 20px;
