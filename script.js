@@ -6,6 +6,14 @@ const header = document.querySelector("header");
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");
 
+window.addEventListener("pageshow", () => {
+    // Remove qualquer animação que tenha ficado na tela
+    document.querySelectorAll(".animacao-jogo").forEach(el => el.remove());
+
+    // Libera cliques novamente se estava desativado
+    document.body.style.pointerEvents = "auto";
+});
+
 fetch('./jogos.json')
     .then(res => res.json())
     .then(data => {
@@ -175,4 +183,5 @@ function carregarJogo() {
             <p><strong>Plataforma:</strong> ${jogo.plataforma}</p>
             </article>
     `;
+
 }
