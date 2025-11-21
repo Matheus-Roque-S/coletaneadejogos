@@ -114,7 +114,9 @@ main {
     flex: 1;
     padding-top: 5px;
     padding-bottom: 3px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 main h1 {
@@ -253,3 +255,4 @@ footer {
 
 
 }
+
