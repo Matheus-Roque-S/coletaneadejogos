@@ -36,12 +36,6 @@ Além de exibir a lista de jogos, o objetivo também é melhorar a experiência 
 
 ---
 
-## 📎 Status do Projeto
-
-📌 **Em desenvolvimento** — novas melhorias e funcionalidades serão adicionadas conforme o avanço dos estudos!
-
----
-
 ## ✨ Objetivo Educacional
 
 O propósito principal deste projeto é servir como aprendizado e evolução no desenvolvimento de interfaces web, organização de dados e boa prática de programação.
@@ -52,4 +46,3 @@ O propósito principal deste projeto é servir como aprendizado e evolução no 
 
 Projeto desenvolvido por **Matheus Gabriel Roque dos Santos**, inspirado no modelo de projeto da **Alura**.
 
----
